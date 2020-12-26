@@ -115,7 +115,36 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<br/><h1>Nikunj &amp; Monam</h1><br/>
-							<h2>We Are Getting Married</h2>			<br/><br/><br/>				<p><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20200313T183000Z%2F20200315T182900Z&details=Wedding%20ceremony%20for%20Monam%20and%20Nikunj.&location=Jaipur%2C%20Rajasthan%2C%20India&text=Monam%20and%20Nikunj%20Agrawal%20Wedding" title="Save Event in my Calendar" class="btn btn-default btn-sm">Save the date</a></p>
+							<h2>We Are Getting Married</h2>			<br/><br/><br/>				<p>
+							<a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20200313T183000Z%2F20200315T182900Z&details=Wedding%20ceremony%20for%20Monam%20and%20Nikunj.&location=Jaipur%2C%20Rajasthan%2C%20India&text=Monam%20and%20Nikunj%20Agrawal%20Wedding" title="Save Event in my Calendar" class="btn btn-default btn-sm" onclick="saveEventJs(); return false;"> Save the date</a>
+							<script>
+		function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}							
+							
+							function saveEventJs() {
+   if (iOS()) {
+       window.location.href = "addToCal.ics";
+       }
+   else {
+       console.log("not an Apple Browser");
+       window.location.href = "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20200313T183000Z%2F20200315T182900Z&details=Wedding%20ceremony%20for%20Monam%20and%20Nikunj.&location=Jaipur%2C%20Rajasthan%2C%20India&text=Monam%20and%20Nikunj%20Agrawal%20Wedding";
+  
+}}
+
+							
+
+							</script>
+							</p>
 							<br/><div class="simply-countdown simply-countdown-one"></div>
 
 						</div>
@@ -591,6 +620,9 @@
 	<script src="js/main.js"></script>
 
 	<script>
+
+
+	
     var d = new Date(1615822200000);
 
     // default example
